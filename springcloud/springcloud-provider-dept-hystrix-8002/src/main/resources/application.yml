@@ -1,6 +1,5 @@
 server:
-  port: 8001
-
+  port: 8002
 mybatis:
   type-aliases-package: com.haohua.pojo
   config-location: classpath:mybatis/mybatis-config.xml
@@ -20,9 +19,9 @@ spring:
 eureka:
   client:
     service-url:
-       defaultZone: http://localhost:7001/eureka/   # 多个eureka用逗号
+       defaultZone: http://localhost:7001/eureka/     # 多个eureka用逗号隔开
   instance:
-    instance-id: springcloud-provider-dept8001   # 修改eureka上的默认描述信息
+    instance-id: springcloud-provider-dept-hystrix-8001  # 修改eureka上的默认描述信息
 
 # info配置
 info:
