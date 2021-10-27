@@ -1,0 +1,26 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: springcloud-zuul    # 微服务名称
+
+# Eureka 注册中心配置
+eureka:
+  client:
+    service-url:
+       defaultZone: http://localhost:7001/eureka/
+  instance:
+    instance-id: springcloud-zuul-9527
+
+info:
+  company.name: springcloud.haohua.com
+zuul:
+  routes:
+     dept-service:  # dept服务路由规则
+         serviceId: springcloud-provider-dept  # eureka注册中心的服务提供方路由名称
+         path: /mydept/**   # 改为自定义路由名称
+  ignored-services: "*"   # 隐藏全部的服务名称
+  prefix: /haohua   # 设置公共的前缀
+
+# zuul 路由网关配置
